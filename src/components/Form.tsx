@@ -1,6 +1,6 @@
 import * as React from "react";
 import Input from "./Input";
-import { radioContent } from "../models";
+import {radioContent} from "../models/constants";
 
 export default function Form() {
   return (
