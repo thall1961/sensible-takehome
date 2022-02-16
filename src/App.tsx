@@ -1,11 +1,10 @@
 import React from "react";
-import "./App.css";
 import Form from "./components/Form";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Sensible Take-Home</header>
+      <header className="py-5 bg-dark text-white text-center text-uppercase font-weight-bold h2">Sensible Take-Home</header>
       <Form />
     </div>
   );

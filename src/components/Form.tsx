@@ -2,7 +2,7 @@ import * as React from "react";
 import Input from "./Input";
 import {radioContent} from "../models/constants";
 
-export default function Form() {
+function Form() {
   return (
     <form className="container">
       <div className="row">
@@ -26,3 +26,7 @@ export default function Form() {
     </form>
   );
 }
+
+Form.proptTypes = {}
+
+export default Form;

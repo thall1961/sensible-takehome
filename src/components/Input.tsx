@@ -11,7 +11,7 @@ function Input({ name, type, content = "", id }: InputProps) {
         placeholder={name}
         name={name}
         id={id}
-        className="form-control"
+        className={`${type === 'text' ? 'form-control' : 'radio'}`}
       />
       {content}
     </label>
