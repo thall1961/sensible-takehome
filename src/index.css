@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.radio {
+  display: block;
+}
+
+.radio > input {
+  margin-right: 5px;
+}
+
+.btn-container {
+  margin-left: 5px;
+}
+
+h5 {
+  font-weight: 900;
+}
