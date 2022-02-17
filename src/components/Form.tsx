@@ -3,6 +3,11 @@ import {fetchConfig, radioContent} from "../models/constants";
 import {Place as PlaceModel} from "../models/place.model";
 import Place from './Place';
 
+/**
+ * This is the main component of the app; I'm purposefully colocating the state
+ * in this component to make performance faster
+ *
+ */
 function Form() {
   const [state, setState] = React.useState(() => ({
     location: '',

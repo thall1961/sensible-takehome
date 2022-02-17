@@ -1,5 +1,3 @@
-import {FetchInput} from "./fetch-input.model";
-
 export const inputTypes: string[] = ["text", "radio"];
 export const radioContent = [
   {id: "co", content: "Snowmass, CO", lat: "39.2130", long: "-106.9378"},
