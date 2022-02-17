@@ -53,7 +53,7 @@ function Form() {
             </div>
           </div>
           <div className="col-md-6 d-flex justify-content-padding align-items-center">
-            <input name="keyword" id="keyword" type="text" className="form-control" value={keyword}
+            <input name="keyword" placeholder="keyword" id="keyword" type="text" className="form-control" value={keyword}
                    onChange={handleKeywordChange}/>
             <div className="btn-container">
               <button type="submit" className="btn btn-primary">Search</button>
