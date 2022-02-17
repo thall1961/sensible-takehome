@@ -1,8 +1,7 @@
-export interface Place {
-  id: string;
+export interface PlaceProps {
   name: string;
-  rating: number;
   address: string;
+  rating: number;
   icon: string;
   ratingNumber: number;
 }

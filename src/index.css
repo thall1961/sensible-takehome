@@ -27,3 +27,20 @@ code {
 h5 {
   font-weight: 900;
 }
+
+.ml-2 {
+  margin-left: 20px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.font-weight-bold {
+  font-weight: 700
+}
