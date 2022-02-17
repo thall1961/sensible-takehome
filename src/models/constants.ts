@@ -18,13 +18,14 @@ export const radioContent = [
     long: "-121.7300",
   },
 ];
-
-export const fetchPlaces = ({lat, long, keyword}: FetchInput) => {
-  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat}%2C${long}&radius=1500&keyword=${keyword}&key=AIzaSyDIb6tuC5IBX5yf8pYBMs_hLkZicqDHZ9k`;
-  return window.fetch(url, {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json;charset=UTF-8'
-    }
-  })
+export const fetchConfig: RequestInit = {
+  method: 'POST',
+  mode: 'same-origin',
+  cache: 'no-cache',
+  credentials: 'same-origin',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  redirect: 'follow',
+  referrerPolicy: 'no-referrer'
 };

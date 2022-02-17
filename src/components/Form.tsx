@@ -1,11 +1,13 @@
 import * as React from "react";
-import {fetchPlaces, radioContent} from "../models/constants";
+import {fetchConfig, radioContent} from "../models/constants";
+import {Place} from "../models/place.model";
 
 function Form() {
   const [state, setState] = React.useState(() => ({
     location: 'OR',
     keyword: '',
-    places: null,
+    places: [],
+    fetching: false,
     error: null
   }));
   const {location, keyword, places, error} = state;
@@ -18,17 +20,19 @@ function Form() {
     setState({...state, keyword: event.target.value})
   }
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
+    setState({...state, fetching: true});
     const place = radioContent.find(r => r.id === location);
     const lat = place?.lat || '';
     const long = place?.long || '';
-    fetchPlaces({lat, long, keyword})
-      .then(async response => {
-        const {data} = await response.json();
-        // TODO: Handle data
-      })
-      .catch(error => setState({...state, error}));
+    const response = await fetch('/', {
+      ...fetchConfig,
+      body: JSON.stringify({lat, long, keyword})
+    });
+    const data = await response.json();
+    const places = data?.results.map((r: any) => ({id: r.place_id, name: r.name, rating: r.rating, address: r.plus_code.compound_code}));
+    setState({...state, places, fetching: false});
   };
 
   return (
@@ -63,6 +67,10 @@ function Form() {
       </form>
       <div className="py-3 my-3 bg-light">
         <h5 className="text-uppercase font-weight-bold text-center">results</h5>
+        {state.places && !state.fetching
+          ? state.places.map((p: Place) => <p key={p.id}>{p.name}</p>)
+          : <p className="text-center">Waiting...</p>
+        }
       </div>
     </>
   );
