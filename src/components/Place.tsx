@@ -1,5 +1,17 @@
 import {PlaceProps} from "../models/place-props.model";
 import PropTypes from "prop-types";
+
+/**
+ * The Place component is responsible for receiving data about a place returned from
+ * Google and displaying it to the user.  There's no available interaction and there's
+ * not any network calls needed; this is intended to be a dumb component strictly for UI
+ *
+ * @param name
+ * @param address
+ * @param rating
+ * @param icon
+ * @param ratingNumber
+ */
 function Place({name, address, rating, icon, ratingNumber}: PlaceProps) {
   return (
     <div className="card p-4 rounded shadow my-2">
